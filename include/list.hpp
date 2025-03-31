@@ -60,12 +60,10 @@ class List {
     for (int i = 0; i <= last; i++) {
       delete data[i];
     }
-
     for (int i = 0; i <= p.last; i++) {
       data[i] = new T(*(p.data[i]));
     }
     last = p.last;
-
     return *this;
   }
 };

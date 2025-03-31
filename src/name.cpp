@@ -5,23 +5,23 @@ Name::Name() {}
 
 Name::Name(const Name& n) : first(n.first), last(n.last) {}
 
-std::string Name::getFirst() const {
+string Name::getFirst() const {
   return this->first;
 }
 
-std::string Name::getLast() const {
+string Name::getLast() const {
   return this->last;
 }
 
-std::string Name::toString() const {
+string Name::toString() const {
   return this->first + ", " + this->last;
 }
 
-void Name::setFirst(const std::string& f) {
+void Name::setFirst(const string& f) {
   this->first = f;
 }
 
-void Name::setLast(const std::string& l) {
+void Name::setLast(const string& l) {
   this->last = l;
 }
 
@@ -63,13 +63,13 @@ int Name::compare(const Name& a, const Name& b) {
   return a.toString().compare(b.toString());
 }
 
-std::istream& operator>>(std::istream& is, Name& n) {
+istream& operator>>(istream& is, Name& n) {
   getline(is, n.last, '*');
   getline(is, n.first, '*');
   return is;
 }
 
-std::ostream& operator<<(std::ostream& os, const Name& n) {
+ostream& operator<<(ostream& os, const Name& n) {
   os << n.last << '*';
   os << n.first;
   return os;
